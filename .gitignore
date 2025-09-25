@@ -251,4 +251,4 @@ __marimo__/
 # pdm.lock
 # pdm.toml
 .idea/*
-
+.cadence
