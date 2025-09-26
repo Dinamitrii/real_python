@@ -24,7 +24,7 @@ p {
     position: absolute;
     max-width: 272px;
     padding: 20px;
-    background-color: #45f3f3;
+    background-color: rgba(250, 251, 251, 0.22);
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     border-radius: 8px;
     height: 670px;
@@ -41,7 +41,7 @@ p {
 .container {
     max-width: 800px;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: rgba(250, 251, 251, 0.62);
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     border-radius: 8px;
     margin: 50px auto 0;
@@ -50,7 +50,7 @@ p {
 .container_mid {
     max-width: 800px;
     padding: 20px;
-    background-color: #18f518;
+    background-color: rgba(24, 245, 24, 0.4);
     box-shadow: 0 0 10px rgb(0, 0, 0);
     border-radius: 8px;
     margin: 50px auto 0;
@@ -59,7 +59,7 @@ p {
 .container_bottom {
     max-width: 800px;
     padding: 20px;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.53);
     box-shadow: 0 0 10px rgb(0, 0, 0);
     border-radius: 8px;
     margin: 50px auto 0;
@@ -71,6 +71,6 @@ p {
   top: 60px;
 }
 
-.a {
-    color: rgb(0, 0, 0);
+.a:hover {
+    color: rgb(155, 246, 94);
 }
