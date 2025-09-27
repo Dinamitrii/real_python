@@ -79,7 +79,7 @@ def index():
 
     folium.Marker(location=[lat, lon], popup=popup1, tooltip=tooltip, icon=icon1).add_to(maps_to)
 
-    folium.plugins.Geocoder().add_to(maps_to)
+    Geocoder().add_to(maps_to)
 
     url = (
         "https://raw.githubusercontent.com/ocefpaf/secoora_assets_map/"
