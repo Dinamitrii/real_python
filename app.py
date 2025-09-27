@@ -4,7 +4,7 @@ import json
 from pprint import pprint
 import folium
 from folium import IFrame, ClickForMarker
-from folium.plugins import FloatImage, Geocoder
+from folium.plugins import FloatImage, Geocoder, geocoder
 from geopy.geocoders import Nominatim
 import requests
 from dotenv import load_dotenv
@@ -45,33 +45,41 @@ def index():
     #
     geolocator = Nominatim(timeout=10, user_agent="Dinamitrii")
 
-    loc =  geolocator.geocode(json_data)
+    loc = geolocator.geocode(json_data)
 
-    print(loc)
+    pprint(loc.raw)
 
     address = loc.address
 
+    geodata = loc.raw
+
+
+    lat = loc.latitude
+    lon = loc.longitude
+
     print(address)
+    print((lat, lon))
 
+    maps_to = folium.Map([lat, lon], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
 
-
-    maps_to = folium.Map([loc.latitude, loc.longitude], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
-
-    tooltip = "Click to see @"
+    tooltip = "You are considered here..."
     html = '<img src="data:image/png;base64,{}">'.format
     picture1 = base64.b64encode(open('static/images/xtras/1.png', 'rb').read()).decode()
     picture2 = base64.b64encode(open('static/images/xtras/12.png', 'rb').read()).decode()
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
-    popup1 = folium.Popup(iframe1, max_width=300)
+
+
+    popup1 = folium.Popup(f'<a href=("https://www.google.com/maps/embed/v1/view?key={os.getenv("API_KEY")}&center={[lat, lon]}&zoom=18&maptype=satellite")</a>')
+
+
     popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
     icon2 = folium.Icon(color="green", icon="info-sign")
 
+    folium.Marker(location=[lat, lon], popup=popup1, tooltip=tooltip, icon=icon1).add_to(maps_to)
 
-    folium.Marker(location=[loc.latitude, loc.longitude],popup=loc.address, tooltip=tooltip, icon=icon1).add_to(maps_to)
-
-    folium.plugins.Geocoder(loc.address).add_to(maps_to)
+    folium.plugins.Geocoder().add_to(maps_to)
 
     url = (
         "https://raw.githubusercontent.com/ocefpaf/secoora_assets_map/"
@@ -86,6 +94,7 @@ def index():
 
         'data': json_data,
         'map': maps_to,
+        'geodata': geodata,
 
     }
 
