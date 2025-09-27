@@ -17,14 +17,14 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_77e734b18591e126a36c292774f8b1d7 {
+                #map_e58f5e859ae1da252d92f831d59086ea {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
                     left: 0.0%;
                     top: 0.0%;
                 }
-                .leaflet-container { font-size: 1rem; }
+                .leaflet-container { font-size: 1.5rem; }
             </style>
 
             <style>html, body {
@@ -50,25 +50,25 @@
             </script>
 
         
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
     
                 <style>
-                    #float_image_babe8bcc2feeab0b9f6ce4511265c30d {
+                    #float_image_914c6605986f82468d5aac81e1739290 {
                         position: absolute;
                         bottom: 60%;
                         left: 30%;
                         }
                 </style>
             
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_77e734b18591e126a36c292774f8b1d7" ></div>
+            <div class="folium-map" id="map_e58f5e859ae1da252d92f831d59086ea" ></div>
         
     
-            <img id="float_image_babe8bcc2feeab0b9f6ce4511265c30d" alt="float_image"
+            <img id="float_image_914c6605986f82468d5aac81e1739290" alt="float_image"
                  src="https://raw.githubusercontent.com/ocefpaf/secoora_assets_map/a250729bbcf2ddd12f46912d36c33f7539131bec/secoora_icons/rose.png"
                  style="z-index: 999999">
             </img>
@@ -77,8 +77,8 @@
 <script>
     
     
-            var map_77e734b18591e126a36c292774f8b1d7 = L.map(
-                "map_77e734b18591e126a36c292774f8b1d7",
+            var map_e58f5e859ae1da252d92f831d59086ea = L.map(
+                "map_e58f5e859ae1da252d92f831d59086ea",
                 {
                     center: [42.6977028, 23.3217359],
                     crs: L.CRS.EPSG3857,
@@ -90,13 +90,14 @@
 
                 }
             );
-            L.control.zoom( { position: "bottomleft" } ).addTo(map_77e734b18591e126a36c292774f8b1d7);
+            L.control.scale().addTo(map_e58f5e859ae1da252d92f831d59086ea);
+            L.control.zoom( { position: "bottomleft" } ).addTo(map_e58f5e859ae1da252d92f831d59086ea);
 
             
 
         
     
-            var tile_layer_8d6ff13c53a374199029b91b02736691 = L.tileLayer(
+            var tile_layer_46878c83876b5c86c27890711a024912 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -113,17 +114,17 @@
             );
         
     
-            tile_layer_8d6ff13c53a374199029b91b02736691.addTo(map_77e734b18591e126a36c292774f8b1d7);
+            tile_layer_46878c83876b5c86c27890711a024912.addTo(map_e58f5e859ae1da252d92f831d59086ea);
         
     
-            var marker_5e6402e2b56d2565b2844ed4e839ab26 = L.marker(
+            var marker_2554445d141207e5c38b4141a03bbbe8 = L.marker(
                 [42.6977028, 23.3217359],
                 {
 }
-            ).addTo(map_77e734b18591e126a36c292774f8b1d7);
+            ).addTo(map_e58f5e859ae1da252d92f831d59086ea);
         
     
-            var icon_51af0620bac46c303108982d19a7b1ff = L.AwesomeMarkers.icon(
+            var icon_b35457a0397981da4841713b307c8283 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -134,38 +135,62 @@
             );
         
     
-        var popup_29fda0befccd8faeb741bbfcced5d8a3 = L.popup({
+        var popup_03d44b99290ae1e39fdd573a2d41e7da = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_77e3233de9bfddfa63f61b92623b59f8 = $(`<div id="html_77e3233de9bfddfa63f61b92623b59f8" style="width: 100.0%; height: 100.0%;">София, Средец, Столична, София-град, България</div>`)[0];
-                popup_29fda0befccd8faeb741bbfcced5d8a3.setContent(html_77e3233de9bfddfa63f61b92623b59f8);
+                var html_3eb788410ffb6294931deeb6af6ed64d = $(`<div id="html_3eb788410ffb6294931deeb6af6ed64d" style="width: 100.0%; height: 100.0%;"><a href='https://www.google.com/maps/embed/v1/view?key=AIzaSyAtPCVL8OZUFWQ0czlPkRCI-AdFmSlVY1o&center=('42.6977028', '23.3217359')&zoom=18&maptype=satellite'</a></div>`)[0];
+                popup_03d44b99290ae1e39fdd573a2d41e7da.setContent(html_3eb788410ffb6294931deeb6af6ed64d);
             
         
 
-        marker_5e6402e2b56d2565b2844ed4e839ab26.bindPopup(popup_29fda0befccd8faeb741bbfcced5d8a3)
+        marker_2554445d141207e5c38b4141a03bbbe8.bindPopup(popup_03d44b99290ae1e39fdd573a2d41e7da)
         ;
 
         
     
     
-            marker_5e6402e2b56d2565b2844ed4e839ab26.bindTooltip(
-                `<div>
-                     Click to see @
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
+                marker_2554445d141207e5c38b4141a03bbbe8.setIcon(icon_b35457a0397981da4841713b307c8283);
+            
+    
+            var circle_marker_780f2f5290d6e8f12444aa61be92f64d = L.circleMarker(
+                [42.6977028, 23.3217359],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 80, "stroke": true, "weight": 3}
+            ).addTo(map_e58f5e859ae1da252d92f831d59086ea);
         
     
-                marker_5e6402e2b56d2565b2844ed4e839ab26.setIcon(icon_51af0620bac46c303108982d19a7b1ff);
+        var popup_d27134f9964def5b2f56af3c3d5aa949 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed82a9d6f61c52a3fbf5f23badbacb3b = $(`<div id="html_ed82a9d6f61c52a3fbf5f23badbacb3b" style="width: 100.0%; height: 100.0%;"><a href='https://www.google.com/maps/embed/v1/view?key=AIzaSyAtPCVL8OZUFWQ0czlPkRCI-AdFmSlVY1o&center=('42.6977028', '23.3217359')&zoom=18&maptype=satellite'</a></div>`)[0];
+                popup_d27134f9964def5b2f56af3c3d5aa949.setContent(html_ed82a9d6f61c52a3fbf5f23badbacb3b);
+            
+        
+
+        circle_marker_780f2f5290d6e8f12444aa61be92f64d.bindPopup(popup_d27134f9964def5b2f56af3c3d5aa949)
+        ;
+
+        
+    
+    
+                function newMarker(e){
+                    var new_mark = L.marker().setLatLng(e.latlng).addTo(map_e58f5e859ae1da252d92f831d59086ea);
+                    new_mark.dragging.enable();
+                    new_mark.on('dblclick', function(e){ map_e58f5e859ae1da252d92f831d59086ea.removeLayer(e.target)})
+                    var lat = e.latlng.lat.toFixed(4),
+                       lng = e.latlng.lng.toFixed(4);
+                    new_mark.bindPopup(`<b>Lat:</b> ${lat}<br /><b>Lon:</b> ${lng}`);
+                    };
+                map_e58f5e859ae1da252d92f831d59086ea.on('click', newMarker);
             
     
 
-            var geocoderOpts_geocoder_87385067efc36b7e7a0aa922b5e0e1d8 = {
+            var geocoderOpts_geocoder_f7e2eb01ded36703eb380641bd9fcd22 = {
   "collapsed": "\u0421\u043e\u0444\u0438\u044f, \u0421\u0440\u0435\u0434\u0435\u0446, \u0421\u0442\u043e\u043b\u0438\u0447\u043d\u0430, \u0421\u043e\u0444\u0438\u044f-\u0433\u0440\u0430\u0434, \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f",
   "position": "topright",
   "defaultMarkGeocode": true,
@@ -176,31 +201,20 @@
 };
 
             // note: geocoder name should start with lowercase
-            var geocoderName_geocoder_87385067efc36b7e7a0aa922b5e0e1d8 = geocoderOpts_geocoder_87385067efc36b7e7a0aa922b5e0e1d8["provider"];
+            var geocoderName_geocoder_f7e2eb01ded36703eb380641bd9fcd22 = geocoderOpts_geocoder_f7e2eb01ded36703eb380641bd9fcd22["provider"];
 
-            var customGeocoder_geocoder_87385067efc36b7e7a0aa922b5e0e1d8 = L.Control.Geocoder[ geocoderName_geocoder_87385067efc36b7e7a0aa922b5e0e1d8 ](
-                geocoderOpts_geocoder_87385067efc36b7e7a0aa922b5e0e1d8['providerOptions']
+            var customGeocoder_geocoder_f7e2eb01ded36703eb380641bd9fcd22 = L.Control.Geocoder[ geocoderName_geocoder_f7e2eb01ded36703eb380641bd9fcd22 ](
+                geocoderOpts_geocoder_f7e2eb01ded36703eb380641bd9fcd22['providerOptions']
             );
-            geocoderOpts_geocoder_87385067efc36b7e7a0aa922b5e0e1d8["geocoder"] = customGeocoder_geocoder_87385067efc36b7e7a0aa922b5e0e1d8;
+            geocoderOpts_geocoder_f7e2eb01ded36703eb380641bd9fcd22["geocoder"] = customGeocoder_geocoder_f7e2eb01ded36703eb380641bd9fcd22;
 
             L.Control.geocoder(
-                geocoderOpts_geocoder_87385067efc36b7e7a0aa922b5e0e1d8
+                geocoderOpts_geocoder_f7e2eb01ded36703eb380641bd9fcd22
             ).on('markgeocode', function(e) {
-                var zoom = geocoderOpts_geocoder_87385067efc36b7e7a0aa922b5e0e1d8['zoom'] || map_77e734b18591e126a36c292774f8b1d7.getZoom();
-                map_77e734b18591e126a36c292774f8b1d7.setView(e.geocode.center, zoom);
-            }).addTo(map_77e734b18591e126a36c292774f8b1d7);
+                var zoom = geocoderOpts_geocoder_f7e2eb01ded36703eb380641bd9fcd22['zoom'] || map_e58f5e859ae1da252d92f831d59086ea.getZoom();
+                map_e58f5e859ae1da252d92f831d59086ea.setView(e.geocode.center, zoom);
+            }).addTo(map_e58f5e859ae1da252d92f831d59086ea);
 
         
-    
-                function newMarker(e){
-                    var new_mark = L.marker().setLatLng(e.latlng).addTo(map_77e734b18591e126a36c292774f8b1d7);
-                    new_mark.dragging.enable();
-                    new_mark.on('dblclick', function(e){ map_77e734b18591e126a36c292774f8b1d7.removeLayer(e.target)})
-                    var lat = e.latlng.lat.toFixed(4),
-                       lng = e.latlng.lng.toFixed(4);
-                    new_mark.bindPopup("Latitude: " + lat + "<br>Longitude: " + lng );
-                    };
-                map_77e734b18591e126a36c292774f8b1d7.on('click', newMarker);
-            
 </script>
 </html>

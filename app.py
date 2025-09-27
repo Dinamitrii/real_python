@@ -52,9 +52,8 @@ def index():
     address = loc.address
 
     print(address)
-    
-    full_data=loc.raw
-    print{full_fata}
+
+
 
     maps_to = folium.Map([loc.latitude, loc.longitude], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
 

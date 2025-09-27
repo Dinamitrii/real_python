@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    color: #f40673;
+    color: rgba(255, 0, 0, 0.52);
     text-align: center;
     padding: 20px;
     background-color: darkslategrey;
@@ -18,13 +18,13 @@ h1 {
 p {
     text-align: center;
     font-size: 1.2em;
-    color: #495057;
+    color: rgba(73, 80, 87, 0.91);
 }
 .container_left {
     position: absolute;
     max-width: 272px;
     padding: 20px;
-    background-color: rgba(250, 251, 251, 0.22);
+    background-color: rgba(73, 80, 87, 0.91);
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     border-radius: 8px;
     height: 670px;
@@ -59,7 +59,7 @@ p {
 .container_bottom {
     max-width: 800px;
     padding: 20px;
-    background-color: rgba(255, 0, 0, 0.53);
+    background-color: rgba(255, 0, 0, 0.52);
     box-shadow: 0 0 10px rgb(0, 0, 0);
     border-radius: 8px;
     margin: 50px auto 0;
