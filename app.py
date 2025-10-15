@@ -47,37 +47,37 @@ def index():
 
     loc = geolocator.geocode(json_data)
 
-    pprint(loc.raw)
-
-    address = loc.address
-
     geodata = loc.raw
 
+    print(geodata)
 
     lat = loc.latitude
     lon = loc.longitude
 
+    address = loc.address
+
     print(address)
-    print((lat, lon))
+    print(lat, lon)
+
+    pprint(geodata)
 
     maps_to = folium.Map([lat, lon], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
 
-    tooltip = "You are considered here..."
+    tooltip = "<a src='https://maps.google.com/'</a>"
     html = '<img src="data:image/png;base64,{}">'.format
     picture1 = base64.b64encode(open('static/images/xtras/1.png', 'rb').read()).decode()
     picture2 = base64.b64encode(open('static/images/xtras/12.png', 'rb').read()).decode()
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
 
-
-    popup1 = folium.Popup(f'<a href=("https://www.google.com/maps/embed/v1/view?key={os.getenv("API_KEY")}&center={[lat, lon]}&zoom=18&maptype=satellite")</a>')
-
+    popup1 = (f"<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}"
+              f"&center={address}&zoom=18'>'</a>'")
 
     popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
     icon2 = folium.Icon(color="green", icon="info-sign")
 
-    folium.Marker(location=[lat, lon], popup=popup1, tooltip=tooltip, icon=icon1).add_to(maps_to)
+    folium.Marker(location=(lat, lon), popup=popup1, tooltip=tooltip, icon=icon1).add_to(maps_to)
 
     Geocoder().add_to(maps_to)
 

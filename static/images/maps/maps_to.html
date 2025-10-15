@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_b7b9e9b675eb70df92c4191a5d909834 {
+                #map_0f9adc6971eb6c5afc467b992ca31d0a {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,7 +54,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
     
                 <style>
-                    #float_image_35fc4727bbc815462038b3ed2eeadea6 {
+                    #float_image_41529fb37f63ea8d36a45f1634e7bb83 {
                         position: absolute;
                         bottom: 60%;
                         left: 30%;
@@ -65,10 +65,10 @@
 <body>
     
     
-            <div class="folium-map" id="map_b7b9e9b675eb70df92c4191a5d909834" ></div>
+            <div class="folium-map" id="map_0f9adc6971eb6c5afc467b992ca31d0a" ></div>
         
     
-            <img id="float_image_35fc4727bbc815462038b3ed2eeadea6" alt="float_image"
+            <img id="float_image_41529fb37f63ea8d36a45f1634e7bb83" alt="float_image"
                  src="https://raw.githubusercontent.com/ocefpaf/secoora_assets_map/a250729bbcf2ddd12f46912d36c33f7539131bec/secoora_icons/rose.png"
                  style="z-index: 999999">
             </img>
@@ -77,8 +77,8 @@
 <script>
     
     
-            var map_b7b9e9b675eb70df92c4191a5d909834 = L.map(
-                "map_b7b9e9b675eb70df92c4191a5d909834",
+            var map_0f9adc6971eb6c5afc467b992ca31d0a = L.map(
+                "map_0f9adc6971eb6c5afc467b992ca31d0a",
                 {
                     center: [42.6977028, 23.3217359],
                     crs: L.CRS.EPSG3857,
@@ -90,13 +90,13 @@
 
                 }
             );
-            L.control.zoom( { position: "bottomleft" } ).addTo(map_b7b9e9b675eb70df92c4191a5d909834);
+            L.control.zoom( { position: "bottomleft" } ).addTo(map_0f9adc6971eb6c5afc467b992ca31d0a);
 
             
 
         
     
-            var tile_layer_3c001af01305655e2065b472c3a6adec = L.tileLayer(
+            var tile_layer_8bfdcb6d8b8d4ffbf9b15f8f5ec3c4aa = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -113,17 +113,17 @@
             );
         
     
-            tile_layer_3c001af01305655e2065b472c3a6adec.addTo(map_b7b9e9b675eb70df92c4191a5d909834);
+            tile_layer_8bfdcb6d8b8d4ffbf9b15f8f5ec3c4aa.addTo(map_0f9adc6971eb6c5afc467b992ca31d0a);
         
     
-            var marker_db87ef697cef59b5f7e67948c9599734 = L.marker(
+            var marker_e6bfedc064228a57988b35cdaf4c6cc8 = L.marker(
                 [42.6977028, 23.3217359],
                 {
 }
-            ).addTo(map_b7b9e9b675eb70df92c4191a5d909834);
+            ).addTo(map_0f9adc6971eb6c5afc467b992ca31d0a);
         
     
-            var icon_fcb72f6fa346234455eb1df22a70bca9 = L.AwesomeMarkers.icon(
+            var icon_35d173be30ba3df168c90e29729a9383 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -134,26 +134,26 @@
             );
         
     
-        var popup_885601a4e15c9b0e2776f78e6330d687 = L.popup({
+        var popup_2f2117af9290729bfe1a7c315322df30 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6ffa389bf02c909f72d270dab08b8c70 = $(`<div id="html_6ffa389bf02c909f72d270dab08b8c70" style="width: 100.0%; height: 100.0%;"><a href=("https://www.google.com/maps/embed/v1/view?key=None&center=[42.6977028, 23.3217359]&zoom=18&maptype=satellite")</a></div>`)[0];
-                popup_885601a4e15c9b0e2776f78e6330d687.setContent(html_6ffa389bf02c909f72d270dab08b8c70);
+                var html_c7e46dddaf3b1e5b292faf9003833cbc = $(`<div id="html_c7e46dddaf3b1e5b292faf9003833cbc" style="width: 100.0%; height: 100.0%;"><a href='https://www.google.com/maps/embed/v1/view?key=None&center=София, Средец, Столична, София-град, България&zoom=18'>'</a>'</div>`)[0];
+                popup_2f2117af9290729bfe1a7c315322df30.setContent(html_c7e46dddaf3b1e5b292faf9003833cbc);
             
         
 
-        marker_db87ef697cef59b5f7e67948c9599734.bindPopup(popup_885601a4e15c9b0e2776f78e6330d687)
+        marker_e6bfedc064228a57988b35cdaf4c6cc8.bindPopup(popup_2f2117af9290729bfe1a7c315322df30)
         ;
 
         
     
     
-            marker_db87ef697cef59b5f7e67948c9599734.bindTooltip(
+            marker_e6bfedc064228a57988b35cdaf4c6cc8.bindTooltip(
                 `<div>
-                     You are considered here...
+                     <a src='https://maps.google.com/'</a>
                  </div>`,
                 {
   "sticky": true,
@@ -161,11 +161,11 @@
             );
         
     
-                marker_db87ef697cef59b5f7e67948c9599734.setIcon(icon_fcb72f6fa346234455eb1df22a70bca9);
+                marker_e6bfedc064228a57988b35cdaf4c6cc8.setIcon(icon_35d173be30ba3df168c90e29729a9383);
             
     
 
-            var geocoderOpts_geocoder_30d85cc1b0147b3a00fbf5026757ec72 = {
+            var geocoderOpts_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb = {
   "collapsed": false,
   "position": "topright",
   "defaultMarkGeocode": true,
@@ -176,31 +176,31 @@
 };
 
             // note: geocoder name should start with lowercase
-            var geocoderName_geocoder_30d85cc1b0147b3a00fbf5026757ec72 = geocoderOpts_geocoder_30d85cc1b0147b3a00fbf5026757ec72["provider"];
+            var geocoderName_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb = geocoderOpts_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb["provider"];
 
-            var customGeocoder_geocoder_30d85cc1b0147b3a00fbf5026757ec72 = L.Control.Geocoder[ geocoderName_geocoder_30d85cc1b0147b3a00fbf5026757ec72 ](
-                geocoderOpts_geocoder_30d85cc1b0147b3a00fbf5026757ec72['providerOptions']
+            var customGeocoder_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb = L.Control.Geocoder[ geocoderName_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb ](
+                geocoderOpts_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb['providerOptions']
             );
-            geocoderOpts_geocoder_30d85cc1b0147b3a00fbf5026757ec72["geocoder"] = customGeocoder_geocoder_30d85cc1b0147b3a00fbf5026757ec72;
+            geocoderOpts_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb["geocoder"] = customGeocoder_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb;
 
             L.Control.geocoder(
-                geocoderOpts_geocoder_30d85cc1b0147b3a00fbf5026757ec72
+                geocoderOpts_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb
             ).on('markgeocode', function(e) {
-                var zoom = geocoderOpts_geocoder_30d85cc1b0147b3a00fbf5026757ec72['zoom'] || map_b7b9e9b675eb70df92c4191a5d909834.getZoom();
-                map_b7b9e9b675eb70df92c4191a5d909834.setView(e.geocode.center, zoom);
-            }).addTo(map_b7b9e9b675eb70df92c4191a5d909834);
+                var zoom = geocoderOpts_geocoder_d8d870d2ee1fa039a85a32db80f2b8eb['zoom'] || map_0f9adc6971eb6c5afc467b992ca31d0a.getZoom();
+                map_0f9adc6971eb6c5afc467b992ca31d0a.setView(e.geocode.center, zoom);
+            }).addTo(map_0f9adc6971eb6c5afc467b992ca31d0a);
 
         
     
                 function newMarker(e){
-                    var new_mark = L.marker().setLatLng(e.latlng).addTo(map_b7b9e9b675eb70df92c4191a5d909834);
+                    var new_mark = L.marker().setLatLng(e.latlng).addTo(map_0f9adc6971eb6c5afc467b992ca31d0a);
                     new_mark.dragging.enable();
-                    new_mark.on('dblclick', function(e){ map_b7b9e9b675eb70df92c4191a5d909834.removeLayer(e.target)})
+                    new_mark.on('dblclick', function(e){ map_0f9adc6971eb6c5afc467b992ca31d0a.removeLayer(e.target)})
                     var lat = e.latlng.lat.toFixed(4),
                        lng = e.latlng.lng.toFixed(4);
                     new_mark.bindPopup("Latitude: " + lat + "<br>Longitude: " + lng );
                     };
-                map_b7b9e9b675eb70df92c4191a5d909834.on('click', newMarker);
+                map_0f9adc6971eb6c5afc467b992ca31d0a.on('click', newMarker);
             
 </script>
 </html>
