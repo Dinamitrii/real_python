@@ -63,17 +63,16 @@ def index():
 
     maps_to = folium.Map([lat, lon], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
 
-    tooltip = "<a src='https://maps.google.com/'</a>"
+    popup1 = "HERE..."
     html = '<img src="data:image/png;base64,{}">'.format
     picture1 = base64.b64encode(open('static/images/xtras/1.png', 'rb').read()).decode()
     picture2 = base64.b64encode(open('static/images/xtras/12.png', 'rb').read()).decode()
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
 
-    popup1 = (f"<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}"
-              f"&center={address}&zoom=18'>'</a>'")
+    tooltip = f"<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}&view=center{address}&zoom=18 >'</a>"
 
-    popup2 = folium.Popup(iframe2, max_width=300)
+    # popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
     icon2 = folium.Icon(color="green", icon="info-sign")
 
