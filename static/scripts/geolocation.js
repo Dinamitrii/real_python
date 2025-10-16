@@ -9,8 +9,8 @@
 // locate you.
 let map, infoWindow;
 
-function initMapsing() {
-    map = new google.maps.Map(document.getElementById("mapsing"), {
+function initGeolocation() {
+    map = new google.maps.Map(document.getElementById("geolocation"), {
         center: {lat: 42.6977028, lng: 23.3217359},
         zoom: 6,
     });
@@ -61,5 +61,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-infoWindow.initMap = initMapsing;
+window.initMap = initGeolocation;
 

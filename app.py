@@ -11,6 +11,7 @@ from geopy.geocoders import Nominatim
 import requests
 from dotenv import load_dotenv
 from flask import Flask, render_template, url_for
+from googlemaps.addressvalidation import addressvalidation
 
 load_dotenv(verbose=True)
 
@@ -51,7 +52,6 @@ def index():
 
     geodata = loc.raw
 
-    print(geodata)
 
     lat = loc.latitude
     lon = loc.longitude
@@ -65,22 +65,22 @@ def index():
 
     maps_to = folium.Map([lat, lon], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
 
-    popup1 = "HERE..."
+    tooltip = "HERE..."
     html = '<img src="data:image/png;base64,{}">'.format
     picture1 = base64.b64encode(open('static/images/xtras/1.png', 'rb').read()).decode()
     picture2 = base64.b64encode(open('static/images/xtras/12.png', 'rb').read()).decode()
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
 
-    tooltip = f"(<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}&view=center{address}&zoom=18'></a>)"
+    popup = f"<a>href='https://www.google.com/maps/embed/v1/view?key='{os.getenv('API_KEY')}'&view=center{address}&zoom=18'></a>"
 
     # popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
     icon2 = folium.Icon(color="green", icon="info-sign")
 
-    folium.Marker(location=(lat, lon), popup=popup1, tooltip=tooltip, icon=icon1).add_to(maps_to)
+    folium.Marker(location=(lat, lon), popup=popup, tooltip=tooltip, icon=icon1).add_to(maps_to)
 
-
+    folium.CircleMarker(location=(lat, lon), radius=5, tooltip=tooltip, popup=popup, icon=icon2).add_to(maps_to)
 
     url = (
         "https://raw.githubusercontent.com/ocefpaf/secoora_assets_map/"
@@ -122,11 +122,22 @@ def favicon():
 
 def geolocation():
 
+    geolocation = (index.lat, index.lon)
+    # geolocation = (index.lat, index.lon)
+
+    
+    maps_to = folium.Map([geolocation], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
+
+
     context = {
 
-        'geodata': geodata,
+        'map': maps_to,
+        'geodata': geolocation,
 
     }
+
+    maps_to.save('static/images/maps/maps_to.html')
+
 
     return render_template("geolocation.html", **context)
 
