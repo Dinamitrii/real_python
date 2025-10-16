@@ -120,7 +120,7 @@ def favicon():
 
 @app.route("/geolocation")
 
-def geolocation(geodata=None):
+def geolocation():
 
     context = {
 

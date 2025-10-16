@@ -9,9 +9,9 @@
 // locate you.
 let map, infoWindow;
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat: -34.397, lng: 150.644},
+function initMapsing() {
+    map = new google.maps.Map(document.getElementById("mapsing"), {
+        center: {lat: 42.6977028, lng: 23.3217359},
         zoom: 6,
     });
     infoWindow = new google.maps.InfoWindow();
@@ -39,7 +39,9 @@ function initMap() {
                     map.setCenter(pos);
                 },
                 () => {
-                    handleLocationError(true, infoWindow, map.getCenter());
+                    handleLocationError(true,
+                        infoWindow,
+                        map.getCenter());
                 }
             );
         } else {
@@ -59,4 +61,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-window.initMap = initMap;
+infoWindow.initMap = initMapsing;
+

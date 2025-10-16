@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "22": "^0.0.0",
     "leaflet-providers": "^2.0.0"
   }
 }
