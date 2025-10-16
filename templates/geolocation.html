@@ -1,22 +1,11 @@
 <html lang="en-US">
   <head>
     <title>Geolocation</title>
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
-    <script type="module" src="/static/scripts/index.js"></script>
   </head>
   <body>
-    <div id="map"></div>
-
-    <!--
-      The `defer` attribute causes the script to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises. See
-      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
+    <div id="mapsing"></div>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVM00ZOViJEEcnh02uQi5UICYLbBam30&callback=initMap&v=weekly&solution_channel=GMP_CCS_geolocation_v2"
       defer
     ></script>
   </body>

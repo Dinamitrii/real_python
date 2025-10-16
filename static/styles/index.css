@@ -20,6 +20,7 @@ p {
     font-size: 1.2em;
     color: rgba(73, 80, 87, 0.91);
 }
+
 .container_left {
     position: absolute;
     max-width: 272px;
@@ -63,12 +64,12 @@ p {
     box-shadow: 0 0 10px rgb(0, 0, 0);
     border-radius: 8px;
     margin: 50px auto 0;
-    }
+}
 
 .wrapper {
-  position: absolute;
-  right: 60px;
-  top: 60px;
+    position: absolute;
+    right: 60px;
+    top: 60px;
 }
 
 .a:hover {

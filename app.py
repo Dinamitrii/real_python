@@ -3,8 +3,10 @@ import base64
 import json
 from pprint import pprint
 import folium
+import geopy.geocoders
 from folium import IFrame, ClickForMarker
-from folium.plugins import FloatImage, Geocoder, geocoder
+from folium.plugins import FloatImage
+from geopy import GoogleV3
 from geopy.geocoders import Nominatim
 import requests
 from dotenv import load_dotenv
@@ -70,7 +72,7 @@ def index():
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
 
-    tooltip = f"<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}&view=center{address}&zoom=18 >'</a>"
+    tooltip = f"(<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}&view=center{address}&zoom=18'></a>)"
 
     # popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
@@ -78,7 +80,7 @@ def index():
 
     folium.Marker(location=(lat, lon), popup=popup1, tooltip=tooltip, icon=icon1).add_to(maps_to)
 
-    Geocoder().add_to(maps_to)
+
 
     url = (
         "https://raw.githubusercontent.com/ocefpaf/secoora_assets_map/"
@@ -116,5 +118,18 @@ def favicon():
             url_for('static', filename='images/favicon/site.webmanifest'))
 
 
+@app.route("/geolocation")
+
+def geolocation(geodata=None):
+
+    context = {
+
+        'geodata': geodata,
+
+    }
+
+    return render_template("geolocation.html", **context)
+
+
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run()
