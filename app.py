@@ -10,7 +10,7 @@ from geopy import GoogleV3
 from geopy.geocoders import Nominatim
 import requests
 from dotenv import load_dotenv
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from googlemaps.addressvalidation import addressvalidation
 
 load_dotenv(verbose=True)
@@ -72,7 +72,7 @@ def index():
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
 
-    popup = f"<a>href='https://www.google.com/maps/embed/v1/view?key='{os.getenv('API_KEY')}'&view=center{address}&zoom=18'></a>"
+    popup = f"<a href='https://www.google.com/maps/embed/v1/view?key='{os.getenv('API_KEY')}'&view=center{address}&zoom=18'></a>"
 
     # popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
@@ -104,26 +104,13 @@ def index():
     return render_template('index.html', **context)
 
 
-@app.route("/favicon.ico")
-def favicon():
-    return (url_for('static', filename='images/favicon/favicon.ico'),
-            url_for('static', filename='images/favicon/favicon-16x16.png'),
-            url_for('static', filename='images/favicon/favicon-32x32.png'),
-            url_for('static', filename='images/favicon/android-chrome-192x192.png'),
-            url_for('static', filename='images/favicon/android-chrome-256x256.png'),
-            url_for('static', filename='images/favicon/apple-touch-icon.png'),
-            url_for('static', filename='images/favicon/safari-pinned-tab.svg'),
-            url_for('static', filename='images/favicon/mstile-150x150.png'),
-            url_for('static', filename='images/favicon/browserconfig.xml8lr'),
-            url_for('static', filename='images/favicon/site.webmanifest'))
-
 
 @app.route("/geolocation")
 
 def geolocation():
 
-    geolocation = (index.lat, index.lon)
-    # geolocation = (index.lat, index.lon)
+    # geolocation =
+    geolocation = requests.get(index.json['geolocation'])
 
     
     maps_to = folium.Map([geolocation], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
@@ -140,6 +127,24 @@ def geolocation():
 
 
     return render_template("geolocation.html", **context)
+
+
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return (url_for('static', filename='images/favicon/favicon.ico'),
+            url_for('static', filename='images/favicon/favicon-16x16.png'),
+            url_for('static', filename='images/favicon/favicon-32x32.png'),
+            url_for('static', filename='images/favicon/android-chrome-192x192.png'),
+            url_for('static', filename='images/favicon/android-chrome-256x256.png'),
+            url_for('static', filename='images/favicon/apple-touch-icon.png'),
+            url_for('static', filename='images/favicon/safari-pinned-tab.svg'),
+            url_for('static', filename='images/favicon/mstile-150x150.png'),
+            url_for('static', filename='images/favicon/browserconfig.xml8lr'),
+            url_for('static', filename='images/favicon/site.webmanifest'))
+
+
 
 
 if __name__ == '__main__':

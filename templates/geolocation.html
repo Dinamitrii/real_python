@@ -26,12 +26,15 @@
 <body>
 <form method="POST" action="/geolocation">
 
-    <div class="container_left">
+    <div id="geolocation">
+        <iframe src="/static/images/maps/maps_to.html" id="geolock_map">
 
-    <div id="geolocation"></div>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVM00ZOViJEEcnh02uQi5UICYLbBam30&callback=initMap&v=weekly&solution_channel=GMP_CCS_geolocation_v2"
-      defer
-    ></script>
+        </iframe>
+
+    </div>
+
+
+
+    </form>
   </body>
 </html>
