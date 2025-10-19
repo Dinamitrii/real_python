@@ -3,11 +3,13 @@ import base64
 import json
 from pprint import pprint
 import folium
+import geodata
 import geopy.geocoders
 from folium import IFrame, ClickForMarker
 from folium.plugins import FloatImage
 from geopy import GoogleV3
 from geopy.geocoders import Nominatim
+from traceroute import trace
 import requests
 from dotenv import load_dotenv
 from flask import Flask, render_template, url_for, request
@@ -72,7 +74,7 @@ def index():
     iframe1 = IFrame(html(picture1), '300', '300')
     iframe2 = IFrame(html(picture2), '300', '300')
 
-    popup = f"<a href='https://www.google.com/maps/embed/v1/view?key='{os.getenv('API_KEY')}'&view=center{address}&zoom=18'></a>"
+    popup = f"<a href='https://www.google.com/maps/embed/v1/view?key={os.getenv('API_KEY')}&view=center{address}&zoom=18'></a>"
 
     # popup2 = folium.Popup(iframe2, max_width=300)
     icon1 = folium.Icon(color="blue", icon="info-sign")
@@ -109,17 +111,18 @@ def index():
 
 def geolocation():
 
-    # geolocation =
-    geolocation = requests.get(index.json['geolocation'])
 
-    
-    maps_to = folium.Map([geolocation], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
+    geodata = requests.get(index.json['geolocation'])
+
+    print(geodata)
+
+    maps_to = folium.Map([geodata], tiles='OpenStreetMap', zoom_start=16, zoom_control="bottomleft")
 
 
     context = {
 
         'map': maps_to,
-        'geodata': geolocation,
+        'geodata': geodata,
 
     }
 
@@ -143,6 +146,19 @@ def favicon():
             url_for('static', filename='images/favicon/mstile-150x150.png'),
             url_for('static', filename='images/favicon/browserconfig.xml8lr'),
             url_for('static', filename='images/favicon/site.webmanifest'))
+
+
+@app.route("/traceroute")
+def traceroute():
+
+    context = {
+
+        'data': "traceroute.py",
+
+    }
+
+    # print(trace)
+    return render_template("index.html", **context)
 
 
 
