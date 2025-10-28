@@ -4,13 +4,15 @@ import sys
 
 import mtrpacket
 
-async def trace(ip):
+async def trace(host):
     async with mtrpacket.MtrPacket() as mtr:
         for ttl in range(1, 256):
-            result = await mtr.probe('example.com', ttl=ttl)
+            result = await mtr.probe(host='abv.bg', ttl=ttl)
             print(result)
 
             if result.success:
                 break
 
-asyncio.get_event_loop().run_until_complete(trace(ip=ipaddress.ip_address(sys.argv[1])))
+asyncio.get_event_loop().run_until_complete(trace(host='abv.bg'))
+# asyncio.get_event_loop().run_forever()
+

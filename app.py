@@ -3,17 +3,13 @@ import base64
 import json
 from pprint import pprint
 import folium
-import geodata
-import geopy.geocoders
 from folium import IFrame, ClickForMarker
 from folium.plugins import FloatImage
-from geopy import GoogleV3
 from geopy.geocoders import Nominatim
-from traceroute import trace
 import requests
 from dotenv import load_dotenv
 from flask import Flask, render_template, url_for, request
-from googlemaps.addressvalidation import addressvalidation
+
 
 load_dotenv(verbose=True)
 
@@ -158,7 +154,7 @@ def traceroute():
     }
 
     # print(trace)
-    return render_template("index.html", **context)
+    return render_template("geolocation.html", **context)
 
 
 
